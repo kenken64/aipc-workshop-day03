@@ -22,5 +22,5 @@ packer init config.pkr.hcl
 
 ## Build the packer golden image
 ```
-packer build build.pkr.hcl
+packer build build.pkr.hcl -var "do_token=${DO_PAT}"
 ```

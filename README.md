@@ -28,6 +28,10 @@ packer build --var do_token=${DO_PAT} .
 ## Terraform provisioning
 
 ```
+terraform init
+```
+
+```
 terraform plan -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa" -var "cs_password=password123456" -var "cs_domain=test"
 ```
 

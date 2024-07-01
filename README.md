@@ -32,5 +32,5 @@ terraform plan -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa
 ```
 
 ```
-
+terraform apply --auto-approve-var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa" -var "cs_passwword=password123456" -var "cs_domain=test"
 ```

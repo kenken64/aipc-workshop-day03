@@ -24,7 +24,7 @@ packer init config.pkr.hcl
 
 ## Build the packer golden image
 ```
-packer build --var do_token=${DO_PAT} .
+packer build --var DO_token=${DO_PAT} .
 ```
 
 ## Terraform provisioning
@@ -48,11 +48,37 @@ Check the terraform version
 terraform --version
 ```
 
+
+Install Ansible on the Ubuntu instance
+
+```
+sudo apt-add-repository ppa:ansible/ansible
+
+sudo apt update
+
+sudo apt install ansible-core
+```
+
+Verify the ansible version
+
+```
+ansible --version
+```
+
+
+
 Under the deploy folder run the following commands 
 
 ```
 terraform init
 ```
+
+```
+terraform plan -var "DO_token=${DO_PAT}" -var "ssh_priv_key=/root/.ssh/id_rsa" -var "code_server_password=password123456"
+
+terraform apply --auto-approve -var "DO_token=${DO_PAT}" -var "ssh_priv_key=/root/.ssh/id_rsa" -var "code_server_password=password123456"
+```
+
 
 ```
 terraform plan -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa" -var "cs_password=password123456" -var "cs_domain=test"

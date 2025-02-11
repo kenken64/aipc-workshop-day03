@@ -1,39 +1,29 @@
-variable do_token {
-    type = string
-    sensitive = true
+variable ssh_pub_key {
+   type = string
+   default = "kenneth"
+}
+variable ssh_priv_key {
+   type = string
+   sensitive = true
 }
 
-variable ssh_private_key {
-    type = string
-    sensitive = true
+variable DO_size {
+   type = string
+   default = "s-1vcpu-2gb"
 }
 
-variable do_region {
-    type = string
-    default = "sgp1"
+variable DO_region {
+   type = string
+   default = "sgp1"
 }
 
-variable do_image {
-    type = string 
-    default = "ubuntu-20-04-x64"
+variable DO_token {
+   description = "DO token"
+   type = string
+   sensitive = true
 }
 
-variable do_size {
-    type = string
-    default = "s-1vcpu-512mb-10gb"
+variable code_server_password {
+  type = string
+  sensitive = true
 }
-
-variable do_ssh_key {
-    type = string 
-    default = "aipc"
-}
-
-variable cs_domain {
-    type = string
-}
-
-variable cs_password {
-    type = string
-    sensitive = true
-}
-

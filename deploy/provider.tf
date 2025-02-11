@@ -1,18 +1,19 @@
 terraform {
-    required_providers {
-        digitalocean = {
-            source = "digitalocean/digitalocean"
-            version = "2.26.0"
-        }
-        local = {
-            source = "hashicorp/local"
-            version = "2.4.0"
-        }
+  required_version = "> 1.7.0"
+  required_providers {
+    digitalocean = {
+      source = "digitalocean/digitalocean"
+      version = "2.36.0"
     }
+    local = {
+      source = "hashicorp/local"
+      version = "2.5.1"
+    }
+  }
 }
 
 provider digitalocean {
-    token = var.do_token
+   token = var.DO_token
 }
 
 provider local { }

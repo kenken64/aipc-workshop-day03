@@ -80,10 +80,3 @@ terraform apply --auto-approve -var "DO_token=${DO_PAT}" -var "ssh_priv_key=/roo
 ```
 
 
-```
-terraform plan -var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa" -var "cs_password=password123456" -var "cs_domain=test"
-```
-
-```
-terraform apply --auto-approve-var "do_token=${DO_PAT}" -var "ssh_private_key=/root/.ssh/id_rsa" -var "cs_passwword=password123456" -var "cs_domain=test"
-```
